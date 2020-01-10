@@ -13,18 +13,19 @@ const App = props => {
   }
 
   const deleteCharHandler = index => {
-    const chars = [...inputState.input.split("")];
+    const chars = inputState.input.split('');
     chars.splice(index, 1);
-    setInputState({ input: chars.toString() })
+    setInputState({ input: chars.join('') })
   }
 
   let chars = null;
 
   chars = (
     <div>
-      {inputState.input.split("").map((c, i) => {
+      {inputState.input.split('').map((c, i) => {
         return <Char c={c}
-                              click={() => deleteCharHandler(i)}/>
+                     click={() => deleteCharHandler(i)}
+                     key={i}/>
       })}
     </div>
   );
