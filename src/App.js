@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import ValidationComponent from './ValidationComponent/ValidationComponent';
-import CharComponent from './CharComponent/CharComponent';
+import Validation from './Validation/Validation';
+import Char from './Char/Char';
 
 const App = props => {
   const [ inputState, setInputState ] = useState({
@@ -23,7 +23,7 @@ const App = props => {
   chars = (
     <div>
       {inputState.input.split("").map((c, i) => {
-        return <CharComponent c={c}
+        return <Char c={c}
                               click={() => deleteCharHandler(i)}/>
       })}
     </div>
@@ -35,7 +35,7 @@ const App = props => {
              onChange={inputChangedHandler}
              value={inputState.input}/>
       <p>{inputState.input.length}</p>
-      <ValidationComponent textLength={inputState.input.length}/>
+      <Validation textLength={inputState.input.length}/>
       {chars}
     </div>
   );

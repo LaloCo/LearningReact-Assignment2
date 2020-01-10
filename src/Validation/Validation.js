@@ -1,7 +1,7 @@
 import React from 'react'
-import './ValidationComponent.css'
+import './Validation.css'
 
-const validationComponent = props => {
+const validation = props => {
     let text = null;
 
     if (props.textLength >= 5) {
@@ -20,5 +20,5 @@ const validationComponent = props => {
     );
 }
 
-export default validationComponent;
+export default validation;
 
